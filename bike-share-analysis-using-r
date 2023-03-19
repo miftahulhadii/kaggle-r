@@ -1,23 +1,40 @@
 {
  "cells": [
   {
+   "cell_type": "markdown",
+   "id": "c4f62484",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004378,
+     "end_time": "2023-03-19T08:11:43.268976",
+     "exception": false,
+     "start_time": "2023-03-19T08:11:43.264598",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## Preparation"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "01e76e39",
+   "id": "58604c89",
    "metadata": {
     "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
     "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
     "execution": {
-     "iopub.execute_input": "2023-03-19T04:48:47.217885Z",
-     "iopub.status.busy": "2023-03-19T04:48:47.215827Z",
-     "iopub.status.idle": "2023-03-19T04:48:48.634354Z",
-     "shell.execute_reply": "2023-03-19T04:48:48.632587Z"
+     "iopub.execute_input": "2023-03-19T08:11:43.280084Z",
+     "iopub.status.busy": "2023-03-19T08:11:43.277842Z",
+     "iopub.status.idle": "2023-03-19T08:11:44.757529Z",
+     "shell.execute_reply": "2023-03-19T08:11:44.755537Z"
     },
     "papermill": {
-     "duration": 1.426385,
-     "end_time": "2023-03-19T04:48:48.636688",
+     "duration": 1.488854,
+     "end_time": "2023-03-19T08:11:44.761094",
      "exception": false,
-     "start_time": "2023-03-19T04:48:47.210303",
+     "start_time": "2023-03-19T08:11:43.272240",
      "status": "completed"
     },
     "tags": []
@@ -60,21 +77,38 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "80c76817",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003794,
+     "end_time": "2023-03-19T08:11:44.768894",
+     "exception": false,
+     "start_time": "2023-03-19T08:11:44.765100",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "##  STEP 1 - Collect Data"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "5025ce5c",
+   "id": "e1aca83c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-03-19T04:48:48.673088Z",
-     "iopub.status.busy": "2023-03-19T04:48:48.643983Z",
-     "iopub.status.idle": "2023-03-19T04:49:25.713871Z",
-     "shell.execute_reply": "2023-03-19T04:49:25.711991Z"
+     "iopub.execute_input": "2023-03-19T08:11:44.809943Z",
+     "iopub.status.busy": "2023-03-19T08:11:44.778197Z",
+     "iopub.status.idle": "2023-03-19T08:12:22.934094Z",
+     "shell.execute_reply": "2023-03-19T08:12:22.932227Z"
     },
     "papermill": {
-     "duration": 37.0771,
-     "end_time": "2023-03-19T04:49:25.716808",
+     "duration": 38.164806,
+     "end_time": "2023-03-19T08:12:22.937473",
      "exception": false,
-     "start_time": "2023-03-19T04:48:48.639708",
+     "start_time": "2023-03-19T08:11:44.772667",
      "status": "completed"
     },
     "tags": []
@@ -195,21 +229,38 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "d837ea1e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005383,
+     "end_time": "2023-03-19T08:12:22.949639",
+     "exception": false,
+     "start_time": "2023-03-19T08:12:22.944256",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## STEP 2 - Collect Data"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "0b7b6a9d",
+   "id": "937ad3c6",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-03-19T04:49:25.730319Z",
-     "iopub.status.busy": "2023-03-19T04:49:25.728745Z",
-     "iopub.status.idle": "2023-03-19T04:49:26.060031Z",
-     "shell.execute_reply": "2023-03-19T04:49:26.058215Z"
+     "iopub.execute_input": "2023-03-19T08:12:22.964156Z",
+     "iopub.status.busy": "2023-03-19T08:12:22.962536Z",
+     "iopub.status.idle": "2023-03-19T08:12:23.299031Z",
+     "shell.execute_reply": "2023-03-19T08:12:23.296111Z"
     },
     "papermill": {
-     "duration": 0.341607,
-     "end_time": "2023-03-19T04:49:26.063913",
+     "duration": 0.348228,
+     "end_time": "2023-03-19T08:12:23.303278",
      "exception": false,
-     "start_time": "2023-03-19T04:49:25.722306",
+     "start_time": "2023-03-19T08:12:22.955050",
      "status": "completed"
     },
     "tags": []
@@ -561,7 +612,6 @@
     }
    ],
    "source": [
-    "######  STEP 2 - Collect Data #######\n",
     "# define a vector with the names of the data frames\n",
     "m_list <- list(m1_2022, m2_2022, m3_2022, m4_2022, m5_2022, m6_2022, \n",
     "               m7_2022, m8_2022, m9_2022, m10_2022, m11_2022, m12_2022)\n",
@@ -576,19 +626,19 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "7121aff0",
+   "id": "06e18f13",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-03-19T04:49:26.078652Z",
-     "iopub.status.busy": "2023-03-19T04:49:26.077011Z",
-     "iopub.status.idle": "2023-03-19T04:50:15.354637Z",
-     "shell.execute_reply": "2023-03-19T04:50:15.352879Z"
+     "iopub.execute_input": "2023-03-19T08:12:23.319839Z",
+     "iopub.status.busy": "2023-03-19T08:12:23.318214Z",
+     "iopub.status.idle": "2023-03-19T08:13:13.556499Z",
+     "shell.execute_reply": "2023-03-19T08:13:13.554745Z"
     },
     "papermill": {
-     "duration": 49.288362,
-     "end_time": "2023-03-19T04:50:15.358008",
+     "duration": 50.249376,
+     "end_time": "2023-03-19T08:13:13.559197",
      "exception": false,
-     "start_time": "2023-03-19T04:49:26.069646",
+     "start_time": "2023-03-19T08:12:23.309821",
      "status": "completed"
     },
     "tags": []
@@ -629,21 +679,38 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "8465e4df",
+   "metadata": {
+    "papermill": {
+     "duration": 0.006195,
+     "end_time": "2023-03-19T08:13:13.572785",
+     "exception": false,
+     "start_time": "2023-03-19T08:13:13.566590",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## STEP 3 - Clean Up and Add Data for Analysis"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "3e5fab11",
+   "id": "cd44580c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-03-19T04:50:15.374157Z",
-     "iopub.status.busy": "2023-03-19T04:50:15.372620Z",
-     "iopub.status.idle": "2023-03-19T04:50:32.457409Z",
-     "shell.execute_reply": "2023-03-19T04:50:32.455674Z"
+     "iopub.execute_input": "2023-03-19T08:13:13.588317Z",
+     "iopub.status.busy": "2023-03-19T08:13:13.586900Z",
+     "iopub.status.idle": "2023-03-19T08:13:30.984096Z",
+     "shell.execute_reply": "2023-03-19T08:13:30.982257Z"
     },
     "papermill": {
-     "duration": 17.095253,
-     "end_time": "2023-03-19T04:50:32.460071",
+     "duration": 17.408201,
+     "end_time": "2023-03-19T08:13:30.987122",
      "exception": false,
-     "start_time": "2023-03-19T04:50:15.364818",
+     "start_time": "2023-03-19T08:13:13.578921",
      "status": "completed"
     },
     "tags": []
@@ -961,8 +1028,6 @@
     }
    ],
    "source": [
-    "###### STEP 3 - Clean Up and Add Data for Analysis ######\n",
-    "\n",
     "#remove some unused column\n",
     "all_trips <- all_trips %>%\n",
     "  select(-c(start_lat, start_lng, end_lat, end_lng))\n",
@@ -1013,21 +1078,38 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "04f5b4a0",
+   "metadata": {
+    "papermill": {
+     "duration": 0.007711,
+     "end_time": "2023-03-19T08:13:31.002754",
+     "exception": false,
+     "start_time": "2023-03-19T08:13:30.995043",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## STEP 4 - Conduct Descriptive Analysis"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "a578f75a",
+   "id": "0a02903c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-03-19T04:50:32.477198Z",
-     "iopub.status.busy": "2023-03-19T04:50:32.475779Z",
-     "iopub.status.idle": "2023-03-19T04:50:46.148130Z",
-     "shell.execute_reply": "2023-03-19T04:50:46.146250Z"
+     "iopub.execute_input": "2023-03-19T08:13:31.022008Z",
+     "iopub.status.busy": "2023-03-19T08:13:31.020423Z",
+     "iopub.status.idle": "2023-03-19T08:13:44.876591Z",
+     "shell.execute_reply": "2023-03-19T08:13:44.874661Z"
     },
     "papermill": {
-     "duration": 13.683867,
-     "end_time": "2023-03-19T04:50:46.150784",
+     "duration": 13.869505,
+     "end_time": "2023-03-19T08:13:44.880044",
      "exception": false,
-     "start_time": "2023-03-19T04:50:32.466917",
+     "start_time": "2023-03-19T08:13:31.010539",
      "status": "completed"
     },
     "tags": []
@@ -1515,8 +1597,6 @@
     }
    ],
    "source": [
-    "######### STEP 4 - Conduct Descriptive Analysis ########\n",
-    "\n",
     "## Ride Length Summary\n",
     "mean(all_trips_v2$ride_length)\n",
     "median(all_trips_v2$ride_length)\n",
@@ -1602,29 +1682,44 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "7523d3ab",
+   "metadata": {
+    "papermill": {
+     "duration": 0.011502,
+     "end_time": "2023-03-19T08:13:44.904359",
+     "exception": false,
+     "start_time": "2023-03-19T08:13:44.892857",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "## STEP 5 - Export Summary File for Further Analysis"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "f0c42d55",
+   "id": "4346c426",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2023-03-19T04:50:46.176131Z",
-     "iopub.status.busy": "2023-03-19T04:50:46.174512Z",
-     "iopub.status.idle": "2023-03-19T04:50:46.196843Z",
-     "shell.execute_reply": "2023-03-19T04:50:46.195024Z"
+     "iopub.execute_input": "2023-03-19T08:13:44.931369Z",
+     "iopub.status.busy": "2023-03-19T08:13:44.929834Z",
+     "iopub.status.idle": "2023-03-19T08:13:44.951703Z",
+     "shell.execute_reply": "2023-03-19T08:13:44.949969Z"
     },
     "papermill": {
-     "duration": 0.037735,
-     "end_time": "2023-03-19T04:50:46.199574",
+     "duration": 0.037867,
+     "end_time": "2023-03-19T08:13:44.954150",
      "exception": false,
-     "start_time": "2023-03-19T04:50:46.161839",
+     "start_time": "2023-03-19T08:13:44.916283",
      "status": "completed"
     },
     "tags": []
    },
    "outputs": [],
    "source": [
-    "############ STEP 5 - Export Summary File for Further Analysis #############\n",
-    "\n",
     "## export dataframe to csv\n",
     "\n",
     "write.csv(member_compare, file = \"all_member_compare.csv\")\n",
@@ -1648,14 +1743,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 122.856886,
-   "end_time": "2023-03-19T04:50:46.634015",
+   "duration": 125.59281,
+   "end_time": "2023-03-19T08:13:45.390340",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2023-03-19T04:48:43.777129",
+   "start_time": "2023-03-19T08:11:39.797530",
    "version": "2.4.0"
   }
  },
