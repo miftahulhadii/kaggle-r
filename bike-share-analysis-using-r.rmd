@@ -1,0 +1,269 @@
+---
+jupyter:
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
+  language_info:
+    codemirror_mode: r
+    file_extension: .r
+    mimetype: text/x-r-source
+    name: R
+    pygments_lexer: r
+    version: 4.0.5
+  nbformat: 4
+  nbformat_minor: 4
+---
+
+::: {.cell .markdown}
+## Preparation
+:::
+
+::: {.cell .code _cell_guid="b1076dfc-b9ad-4769-8c92-a6c4dae69d19" _uuid="8f2839f25d086af736a60e9eeb907d3b93b6e0e5" execution="{\"iopub.execute_input\":\"2023-03-19T04:33:21.616593Z\",\"iopub.status.busy\":\"2023-03-19T04:33:21.615019Z\",\"iopub.status.idle\":\"2023-03-19T04:33:21.636042Z\"}" trusted="true"}
+``` R
+#bike-analysis-Cyclists
+
+#library
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+library(readr)
+```
+:::
+
+::: {.cell .markdown}
+## STEP 1 - Collect Data
+:::
+
+::: {.cell .code execution="{\"iopub.execute_input\":\"2023-03-19T04:33:21.639852Z\",\"iopub.status.busy\":\"2023-03-19T04:33:21.638457Z\",\"iopub.status.idle\":\"2023-03-19T04:33:41.548982Z\"}" trusted="true"}
+``` R
+######  STEP 1 - Collect Data #######
+
+m1_2022 <- read_csv("/kaggle/input/bikeshareanalysis2022/202201-divvy-tripdata.csv")
+m2_2022 <- read_csv("/kaggle/input/bikeshareanalysis2022/202202-divvy-tripdata.csv")
+m3_2022 <- read_csv("/kaggle/input/bikeshareanalysis2022/202203-divvy-tripdata.csv")
+m4_2022 <- read_csv("/kaggle/input/bikeshareanalysis2022/202204-divvy-tripdata.csv")
+m5_2022 <- read.csv("/kaggle/input/bikeshareanalysis2022/202205-divvy-tripdata.csv", sep=";")
+m6_2022 <- read_csv("/kaggle/input/bikeshareanalysis2022/202206-divvy-tripdata.csv")
+m7_2022 <- read_csv("/kaggle/input/bikeshareanalysis2022/202207-divvy-tripdata.csv")
+m8_2022 <- read_csv("/kaggle/input/bikeshareanalysis2022/202208-divvy-tripdata.csv")
+m9_2022 <- read_csv("/kaggle/input/bikeshareanalysis2022/202209-divvy-tripdata.csv")
+m10_2022 <- read_csv("/kaggle/input/bikeshareanalysis2022/202210-divvy-tripdata.csv")
+m11_2022 <- read.csv("/kaggle/input/bikeshareanalysis2022/202211-divvy-tripdata.csv", sep=";")
+m12_2022 <- read_csv("/kaggle/input/bikeshareanalysis2022/202212-divvy-tripdata.csv")
+```
+:::
+
+::: {.cell .markdown}
+## STEP 2 - Collect Data
+:::
+
+::: {.cell .code execution="{\"iopub.execute_input\":\"2023-03-19T04:33:41.552829Z\",\"iopub.status.busy\":\"2023-03-19T04:33:41.551391Z\",\"iopub.status.idle\":\"2023-03-19T04:33:41.883739Z\"}" trusted="true"}
+``` R
+# define a vector with the names of the data frames
+m_list <- list(m1_2022, m2_2022, m3_2022, m4_2022, m5_2022, m6_2022, 
+               m7_2022, m8_2022, m9_2022, m10_2022, m11_2022, m12_2022)
+
+# loop through the data frames and check colnames and data types
+for (m in m_list) {
+  colnames(m)
+  str(m)
+}
+```
+:::
+
+::: {.cell .code execution="{\"iopub.execute_input\":\"2023-03-19T04:33:41.887633Z\",\"iopub.status.busy\":\"2023-03-19T04:33:41.886218Z\",\"iopub.status.idle\":\"2023-03-19T04:34:21.402845Z\"}" trusted="true"}
+``` R
+#convert data types before combining
+#started_at column has a different format, make it into one datatypes
+m1_2022$started_at <- ymd_hms(m1_2022$started_at)
+m2_2022$started_at <- ymd_hms(m2_2022$started_at)
+m3_2022$started_at <- ymd_hms(m3_2022$started_at)
+m4_2022$started_at <- ymd_hms(m4_2022$started_at)
+m5_2022$started_at <- ymd_hms(m5_2022$started_at)
+m6_2022$started_at <- ymd_hms(m6_2022$started_at)
+m7_2022$started_at <- ymd_hms(m7_2022$started_at)
+m8_2022$started_at <- ymd_hms(m8_2022$started_at)
+m9_2022$started_at <- ymd_hms(m9_2022$started_at)
+m10_2022$started_at <- ymd_hms(m10_2022$started_at)
+m11_2022$started_at <- ymd_hms(m11_2022$started_at)
+m12_2022$started_at <- ymd_hms(m12_2022$started_at)
+
+#ended_at column has a different format, make it into one datatypes
+m1_2022$ended_at <- ymd_hms(m1_2022$ended_at)
+m2_2022$ended_at <- ymd_hms(m2_2022$ended_at)
+m3_2022$ended_at <- ymd_hms(m3_2022$ended_at)
+m4_2022$ended_at <- ymd_hms(m4_2022$ended_at)
+m5_2022$ended_at <- ymd_hms(m5_2022$ended_at)
+m6_2022$ended_at <- ymd_hms(m6_2022$ended_at)
+m7_2022$ended_at <- ymd_hms(m7_2022$ended_at)
+m8_2022$ended_at <- ymd_hms(m8_2022$ended_at)
+m9_2022$ended_at <- ymd_hms(m9_2022$ended_at)
+m10_2022$ended_at <- ymd_hms(m10_2022$ended_at)
+m11_2022$ended_at <- ymd_hms(m11_2022$ended_at)
+m12_2022$ended_at <- ymd_hms(m12_2022$ended_at)
+
+#combine all sheet
+all_trips <- bind_rows(m1_2022, m2_2022, m3_2022, m4_2022, m5_2022, m6_2022, m7_2022, m8_2022, m9_2022, m10_2022, m11_2022, m12_2022)
+```
+:::
+
+::: {.cell .markdown}
+## STEP 3 - Clean Up and Add Data for Analysis
+:::
+
+::: {.cell .code execution="{\"iopub.execute_input\":\"2023-03-19T04:34:21.408308Z\",\"iopub.status.busy\":\"2023-03-19T04:34:21.406646Z\",\"iopub.status.idle\":\"2023-03-19T04:34:35.987636Z\"}" trusted="true"}
+``` R
+#remove some unused column
+all_trips <- all_trips %>%
+  select(-c(start_lat, start_lng, end_lat, end_lng))
+
+#clean up and add data to prepare for analysis
+colnames(all_trips)   #list of column names
+nrow(all_trips)       #total row
+dim(all_trips)        #total dimension
+head(all_trips)       #view first 6 rows
+str(all_trips)        #see list of data types
+summary(all_trips)    #statistical summary
+
+#check is there any problem in memberships and others?
+
+unique(all_trips$member_casual) #for unique value
+table(all_trips$member_casual)  #total unique value
+
+# if there's any problem on memberships, dualism value (subscriber = member)
+# use recode functions
+# all_trips <- all_trips %>% 
+# mutate(member_casual = recode(member_casual, "Subscriber" = "member", "Customer" = "casual"))
+
+# add columns that list the date, month, day, and year of each ride
+all_trips$date <- as.Date(all_trips$started_at) #The default format is yyyy-mm-dd
+all_trips$month <- format(as.Date(all_trips$date), "%m")
+all_trips$day <- format(as.Date(all_trips$date), "%d")
+all_trips$year <- format(as.Date(all_trips$date), "%Y")
+all_trips$day_of_week <- format(as.Date(all_trips$date), "%A")
+
+# calculate difftime in R (already done in Excel, for docs)
+## https://stat.ethz.ch/R-manual/R-devel/library/base/html/difftime.html
+all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
+
+# inspect the columns data types
+str(all_trips)
+
+# convert the data types
+## change the ride_length column
+
+is.numeric(all_trips$ride_length) #to check if the ride length was in number/factor
+all_trips$ride_length <- as.numeric(all_trips$ride_length)
+is.numeric(all_trips$ride_length)
+
+## https://www.datasciencemadesimple.com/delete-or-drop-rows-in-r-with-conditions-2/
+
+## If we check the data, there's minus ride length, its bad data
+all_trips_v2 <- subset(all_trips, ride_length>0) #include only ride length over 0 s
+```
+:::
+
+::: {.cell .markdown}
+## STEP 4 - Conduct Descriptive Analysis
+:::
+
+::: {.cell .code execution="{\"iopub.execute_input\":\"2023-03-19T04:34:35.991162Z\",\"iopub.status.busy\":\"2023-03-19T04:34:35.989904Z\",\"iopub.status.idle\":\"2023-03-19T04:34:51.011974Z\"}" trusted="true"}
+``` R
+## Ride Length Summary
+mean(all_trips_v2$ride_length)
+median(all_trips_v2$ride_length)
+max(all_trips_v2$ride_length)
+min(all_trips_v2$ride_length)
+summary(all_trips_v2$ride_length)
+
+## Members and casual users summary comparison
+member_compare <- all_trips_v2 %>%
+  drop_na(member_casual) %>% 
+  group_by(membership_type = member_casual) %>% 
+  summarize(average_ride_length = mean(ride_length), number_of_rides = n())
+
+View(member_compare)
+
+## average ride time by each day for members vs casual users
+avg_member_per_day <- all_trips_v2 %>%
+  drop_na(member_casual) %>% 
+  group_by(membership_type = member_casual, day_of_week) %>% 
+  summarize(average_ride_length = mean(ride_length))
+
+View(avg_member_per_day)
+
+### Notice that the day_of_week is not in order
+### change the levels of day_of_week, sunday = 1
+
+all_trips_v2$day_of_week <- ordered(all_trips_v2$day_of_week, levels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+
+#run the code again
+avg_member_per_day <- all_trips_v2 %>%
+  drop_na(member_casual) %>% 
+  group_by(membership_type = member_casual, day_of_week) %>% 
+  summarize(average_ride_length = mean(ride_length))
+
+View(avg_member_per_day)
+
+## number of rides by type and weekday
+### first check the ride_id duplicate to count number of ride
+sum(duplicated(all_trips_v2$ride_id))
+
+### if zero, lets goo
+membertype_per_day <- all_trips_v2 %>%
+  drop_na(member_casual) %>% 
+  group_by(membership_type = member_casual, day_of_week) %>% 
+  summarise(number_of_rides = n(), average_ride_length = mean(ride_length)) %>% #n() for counting 
+  arrange(day_of_week)
+
+View(membertype_per_day)
+
+
+## visualize
+### numbers of rides by rider type
+ggplot(data = membertype_per_day, mapping = aes(x = day_of_week, y = (number_of_rides/1000), fill = membership_type)) + 
+  geom_col(position = "dodge") +
+  labs(title = "Number of Rides by Membership Type in 2022", 
+       x = "", y = "Number of Rides<br><span style = 'font-size:8pt'>(in thousand)</span>", 
+       fill = "Membership Type")+
+  theme(axis.title.y = ggtext::element_markdown())
+
+ggsave(filename = "number-of-rides.png", width = 6.86, height = 4.11, dpi=300)
+
+### average duration
+ggplot(data = membertype_per_day, mapping = aes(x = day_of_week, y = average_ride_length, fill = membership_type)) + 
+  geom_col(position = "dodge") +
+  labs(title = "Average Duration by Membership Type in 2022", 
+       x = "", y = "Average Duration<br><span style = 'font-size:8pt'>(in second)</span>", 
+       fill = "Membership Type")+
+  theme(axis.title.y = ggtext::element_markdown())
+
+ggsave(filename = "avg-duration.png", width = 6.86, height = 4.11, dpi=300)
+
+### day with most nor and avg dur
+highest_day_nor <- membertype_per_day %>% 
+  filter(membership_type == "casual") %>% 
+  arrange(desc(number_of_rides))
+
+  ggplot(data = highest_day_nor, mapping = aes(x = (number_of_rides/1000), y = (day_of_week = reorder(day_of_week, number_of_rides)))) + 
+    geom_col() +
+    labs(title = "Number of Rides Per Day by Casual Riders", 
+        x = "Number of Rides<br><span style = 'font-size:8pt'>(in thousand)</span>", y = "")+
+    theme(axis.title.x = ggtext::element_markdown())
+  ggsave(filename = "high-nor-day.png", width = 6.86, height = 4.11, dpi=300)
+```
+:::
+
+::: {.cell .markdown}
+## STEP 5 - Export Summary File for Further Analysis
+:::
+
+::: {.cell .code execution="{\"iopub.execute_input\":\"2023-03-19T04:34:51.015758Z\",\"iopub.status.busy\":\"2023-03-19T04:34:51.014308Z\",\"iopub.status.idle\":\"2023-03-19T04:34:51.036373Z\"}" trusted="true"}
+``` R
+## export dataframe to csv
+
+write.csv(member_compare, file = "all_member_compare.csv")
+write.csv(membertype_per_day, file = "by_day_member_compare.csv")
+```
+:::
